@@ -58,6 +58,8 @@ const App = () => (
             <Route path="/archive" element={<ProtectedRoute allow={[...memberOnly]}><Archive /></ProtectedRoute>} />
             <Route path="/saved" element={<ProtectedRoute allow={[...memberOnly]}><HeritageCollection /></ProtectedRoute>} />
             <Route path="/journey" element={<ProtectedRoute allow={[...memberOnly]}><Journey /></ProtectedRoute>} />
+            <Route path="/journey/:chapterId" element={<ProtectedRoute allow={[...memberOnly]}><ChapterDetail /></ProtectedRoute>} />
+            <Route path="/archive/:archiveId" element={<ProtectedRoute allow={[...memberOnly]}><ArchiveDetail /></ProtectedRoute>} />
             <Route path="/contribute" element={<ProtectedRoute allow={[...memberOnly]}><Contribute /></ProtectedRoute>} />
             <Route path="/submissions" element={<ProtectedRoute allow={[...memberOnly]}><SubmissionStatus /></ProtectedRoute>} />
             <Route path="/submissions/rejected" element={<ProtectedRoute allow={[...memberOnly]}><SubmissionRejected /></ProtectedRoute>} />
