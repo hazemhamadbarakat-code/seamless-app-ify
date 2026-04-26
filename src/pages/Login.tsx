@@ -110,6 +110,12 @@ const Login = () => {
                 </div>
               </div>
 
+              {error && (
+                <div role="alert" className="rounded-xl border border-crimson/40 bg-crimson/10 px-4 py-3 text-xs uppercase tracking-widest text-crimson font-bold text-center">
+                  {error}
+                </div>
+              )}
+
               <button
                 type="submit"
                 className="w-full flex justify-center items-center gap-2 py-4 rounded-full bg-primary text-primary-foreground font-serif font-bold text-base glow-gold hover:bg-primary-glow transition-all active:scale-[0.98]"
