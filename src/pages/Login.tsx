@@ -69,7 +69,10 @@ const Login = () => {
                     id="email"
                     type="email"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
+                    autoComplete="email"
                     className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-surface-high/60 ghost-border text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
                   />
                 </div>
@@ -85,7 +88,10 @@ const Login = () => {
                     id="password"
                     type={show ? "text" : "password"}
                     required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
+                    autoComplete="current-password"
                     className="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-surface-high/60 ghost-border text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/60 transition-all"
                   />
                   <button
