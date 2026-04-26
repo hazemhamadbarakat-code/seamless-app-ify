@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "@/components/Icon";
+import { useAuth } from "@/auth/AuthContext";
+import { toast } from "@/hooks/use-toast";
 import dome from "@/assets/dome-jerusalem.jpg";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [show, setShow] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen w-full bg-surface-dim flex justify-center">
@@ -41,7 +47,15 @@ const Login = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                navigate("/discover");
+                setError(null);
+                const result = login(email, password);
+                if (!result.ok) {
+                  setError(result.error);
+                  toast({ title: "Access Denied", description: result.error, variant: "destructive" });
+                  return;
+                }
+                toast({ title: "Welcome", description: "Credentials verified. Entering gateway." });
+                navigate(result.redirect, { replace: true });
               }}
               className="space-y-5"
             >
