@@ -125,11 +125,10 @@ const Login = () => {
               </button>
             </form>
 
-            <p className="mt-6 text-center text-sm text-muted-foreground">
-              Don't have an account?{" "}
-              <Link to="/discover" className="font-bold text-secondary hover:underline">
-                Sign Up
-              </Link>
+            <p className="mt-6 text-center text-xs text-muted-foreground leading-relaxed">
+              Access is restricted to provisioned heritage stewards.
+              <br />
+              Contact your <span className="text-secondary font-bold">Thakira Administrator</span> to request credentials.
             </p>
 
             <div className="mt-6 flex items-center justify-center gap-4">
