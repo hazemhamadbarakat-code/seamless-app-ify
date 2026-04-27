@@ -63,12 +63,16 @@ export const AppShell = ({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { role } = useAuth();
 
   // Close drawer on route change
   useEffect(() => setDrawerOpen(false), [location.pathname]);
 
   const nav = noNav ? "none" : navSet;
   const items = nav === "admin" ? adminNav : nav === "user" ? userNav : [];
+  const drawerLinks = baseDrawerLinks.filter((l) =>
+    role ? (l.roles as ReadonlyArray<string>).includes(role) : l.roles.includes("member" as never)
+  );
 
   return (
     <div className="min-h-screen w-full bg-surface-dim flex justify-center">
