@@ -5,10 +5,10 @@ import { Icon } from "@/components/Icon";
 type Status = "active" | "suspended";
 
 const users = [
-  { name: "Malik Al-Sayed", email: "MALIK.S@THAKIRA.ARCH", role: "Admin", meta: "Permissions: Full Access", status: "active" as Status, accent: true },
-  { name: "Elena Vance", email: "E.VANCE@THAKIRA.ARCH", role: "Contributor", meta: "Region: Cairo Sector", status: "active" as Status },
+  { name: "Fahed Al-Sayed", email: "FAHED.S@THAKIRA.ARCH", role: "Admin", meta: "Permissions: Full Access", status: "active" as Status, accent: true },
+  { name: "Manar Abu Talib", email: "M.ABUTALIB@THAKIRA.ARCH", role: "Contributor", meta: "Region: SHJ", status: "active" as Status },
   { name: "Omar Farouk", email: "O.FAROUK@THAKIRA.ARCH", role: "Explorer", meta: "Account Suspended", status: "suspended" as Status },
-  { name: "Sofia Thorne", email: "S.THORNE@THAKIRA.ARCH", role: "Contributor", meta: "Region: London Vault", status: "active" as Status },
+  { name: "Mariam Khalid", email: "M.KHALID@THAKIRA.ARCH", role: "Contributor", meta: "Region: ABU DHABI", status: "active" as Status },
 ];
 
 const AdminUsers = () => {
